@@ -1,0 +1,37 @@
+Network Scan Results
+
+Target Network: 10.0.2.0/24
+
+Command Used:
+nmap -sn 10.0.2.0/24
+
+Result:
+- 1 host detected
+- IP Address: 10.0.2.15
+- No other devices found
+
+
+Port Scan Results
+
+Command Used:
+nmap 10.0.2.15
+
+Result:
+- All 1000 scanned ports are closed
+- No open ports detected
+
+
+Service Scan Results
+
+Command Used:
+nmap -sV 10.0.2.15
+
+Result:
+- No services detected
+- No active listening ports
+
+
+Conclusion
+
+The system is active but does not expose any network services.
+This indicates a low attack surface and a secure default configuration.
