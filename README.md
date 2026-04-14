@@ -46,5 +46,4 @@ Detected services running on open ports.
 - Open ports and services provide entry points for attackers
 - Limiting exposed services reduces security risk
 
-## Resume-Ready Summary
-Performed network reconnaissance using Nmap in a virtual lab environment to identify active hosts, scan open ports, and detect running services, gaining hands-on experience in network security analysis.
+
