@@ -24,26 +24,27 @@ The goal was to understand how systems appear on a network and what information 
 ## Method
 
 ### Host Discovery
-nmap -sn 10.0.2.0/24
 
-Used to identify which devices were active on the network.
+* nmap -sn 10.0.2.0/24 - Used to identify active devices on the network.
 
 ### Port Scanning
-nmap 10.0.2.15
-Scanned the target machine for open ports.
+
+* nmap 10.0.2.15 - Scanned the target machine for open ports.
 
 ### Service Detection
-nmap -sV 10.0.2.15
-Detected services running on open ports.
+
+* nmap -sV 10.0.2.15 - Detected services running on open ports.
 
 ## Key Findings
-- Only a small number of ports were open on the system
-- Most services were not externally exposed
-- The system had minimal visible attack surface
 
+* Only a small number of ports were open on the system
+* Most services were not externally exposed
+* The system had minimal visible attack surface
+  
 ## Security Insights
-- Even simple scans can reveal important system details
-- Open ports and services provide entry points for attackers
-- Limiting exposed services reduces security risk
+
+* Even simple scans can reveal important system details
+* Open ports and services provide potential entry points for attackers
+* Limiting exposed services reduces overall security risk
 
 
