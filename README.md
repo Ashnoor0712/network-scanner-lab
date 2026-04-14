@@ -1,73 +1,50 @@
-# Cybersecurity Lab Project — Network Scanning
+# Network Scanner Lab (Nmap)
 
-## Project Overview
-This project demonstrates basic network reconnaissance using Nmap in a controlled virtual lab environment.
+## Overview
+This project demonstrates a hands-on cybersecurity lab where I used Nmap to perform network scanning, host discovery, and service enumeration in a controlled environment.
 
-The goal was to identify active hosts on a network and analyze open ports and running services.
+The goal was to understand how systems appear on a network and what information can be gathered through basic reconnaissance techniques.
 
----
-
-## Lab Setup
-- Environment: VirtualBox (Ubuntu VM)
-- Network Type: NAT (isolated network)
-- IP Address: 10.0.2.15
-- Network Range: 10.0.2.0/24
-
----
+## Objectives
+- Identify active devices on a network
+- Perform port scanning on a target system
+- Detect running services on open ports
+- Understand how network exposure can be analyzed
 
 ## Tools Used
 - Nmap
+- Ubuntu (Virtual Machine)
+- VirtualBox
 
----
+## Lab Environment
+- OS: Ubuntu (Virtual Machine)
+- Network Range: 10.0.2.0/24
+- Target System: Local VM (10.0.2.15)
 
-## Steps Performed
+## Method
 
-### 1. Identify Network Information
-Command:
-ip a
-
-Purpose:
-To determine the system's IP address and network range.
-
----
-
-### 2. Network Scan (Host Discovery)
-Command:
+### Host Discovery
 nmap -sn 10.0.2.0/24
 
-Result:
-- Only one host detected (10.0.2.15)
-- No additional devices found on the network
+Used to identify which devices were active on the network.
 
----
-
-### 3. Port Scan
-Command:
+### Port Scanning
 nmap 10.0.2.15
+Scanned the target machine for open ports.
 
-Result:
-- All 1000 ports are closed
-- No open ports detected
-
----
-
-### 4. Service Detection
-Command:
+### Service Detection
 nmap -sV 10.0.2.15
+Detected services running on open ports.
 
-Result:
-- No services detected
-- No active listening ports
+## Key Findings
+- Only a small number of ports were open on the system
+- Most services were not externally exposed
+- The system had minimal visible attack surface
 
----
+## Security Insights
+- Even simple scans can reveal important system details
+- Open ports and services provide entry points for attackers
+- Limiting exposed services reduces security risk
 
-## Key Learnings
-- How to identify network range and IP configuration
-- How to perform host discovery using Nmap
-- Understanding open vs closed ports
-- Importance of minimizing attack surface
-
----
-
-## Conclusion
-The system is active but does not expose any network services, indicating a secure default configuration with minimal attack surface.
+## Resume-Ready Summary
+Performed network reconnaissance using Nmap in a virtual lab environment to identify active hosts, scan open ports, and detect running services, gaining hands-on experience in network security analysis.
