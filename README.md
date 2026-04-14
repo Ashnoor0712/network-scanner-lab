@@ -1,59 +1,162 @@
 # Network Scanner Lab (Nmap)
 
 ## Overview
-This project demonstrates a hands-on cybersecurity lab where I used Nmap to perform network scanning, host discovery, and service enumeration in a controlled environment.
 
-The goal was to understand how systems appear on a network and what information can be gathered through basic reconnaissance techniques.
+This project demonstrates a hands-on cybersecurity lab focused on network reconnaissance using Nmap. The objective was to simulate how an attacker or security analyst gathers information about systems on a network, including identifying active hosts, open ports, and running services.
+
+By performing structured scans in a controlled virtual environment, this project highlights how seemingly small pieces of information can expose critical details about a system’s security posture.
+
+---
 
 ## Objectives
-- Identify active devices on a network
-- Perform port scanning on a target system
-- Detect running services on open ports
-- Understand how network exposure can be analyzed
+
+* Identify active devices on a network
+* Perform port scanning on a target system
+* Detect running services on open ports
+* Analyze potential security risks from exposed services
+* Understand how attackers perform reconnaissance
+
+---
 
 ## Tools Used
-- Nmap
-- Ubuntu (Virtual Machine)
-- VirtualBox
+
+* Nmap (Network scanning tool)
+* Ubuntu (Virtual Machine)
+* VirtualBox (Virtualization platform)
+
+---
 
 ## Lab Environment
-- OS: Ubuntu (Virtual Machine)
-- Network Range: 10.0.2.0/24
-- Target System: Local VM (10.0.2.15)
 
-## Method
+* OS: Ubuntu (Virtual Machine)
+* Network Range: 10.0.2.0/24
+* Target System: 10.0.2.15
+* Setup: Isolated virtual lab environment for safe testing
 
-### Host Discovery
+---
 
-* nmap -sn 10.0.2.0/24 - Used to identify active devices on the network.
+## Methodology
 
-### Port Scanning
+### 1. Host Discovery
 
-* nmap 10.0.2.15 - Scanned the target machine for open ports.
+Command:
+nmap -sn 10.0.2.0/24
 
-### Service Detection
+Purpose:
+Used to identify active devices on the network without scanning ports.
 
-* nmap -sV 10.0.2.15 - Detected services running on open ports.
+Outcome:
+Discovered available hosts within the subnet.
 
-### More nmap commands - Advanced Scanning Techniques
+---
 
-* nmap -A 10.0.2.15
-➡ Enables OS detection, version detection, script scanning
-* nmap -O 10.0.2.15
-➡ Attempts OS fingerprinting
-* nmap --script vuln 10.0.2.15
-➡ Checks for known vulnerabilities
+### 2. Port Scanning
+
+Command:
+nmap 10.0.2.15
+
+Purpose:
+Performed a basic scan to identify open ports on the target system.
+
+Outcome:
+Revealed which ports were accessible and potentially exposed.
+
+---
+
+### 3. Service Detection
+
+Command:
+nmap -sV 10.0.2.15
+
+Purpose:
+Identified services running on open ports along with version information.
+
+Outcome:
+Provided insight into what software and services were active.
+
+---
+
+### 4. Advanced Scanning (Enhanced Analysis)
+
+Command:
+nmap -A 10.0.2.15
+
+Purpose:
+Enabled aggressive scanning including OS detection, version detection, and script scanning.
+
+---
+
+Command:
+nmap -O 10.0.2.15
+
+Purpose:
+Attempted to identify the operating system of the target machine.
+
+---
+
+Command:
+nmap --script vuln 10.0.2.15
+
+Purpose:
+Scanned for known vulnerabilities using Nmap’s scripting engine.
+
+---
 
 ## Key Findings
 
-* Only a small number of ports were open on the system
-* Most services were not externally exposed
-* The system had minimal visible attack surface
-  
-## Security Insights
+* Only a limited number of ports were open on the system
+* Services running on open ports were identifiable through version detection
+* The system had a relatively small attack surface
+* No critical vulnerabilities were detected in basic scans (if applicable)
 
-* Even simple scans can reveal important system details
-* Open ports and services provide potential entry points for attackers
-* Limiting exposed services reduces overall security risk
+---
 
+## Security Analysis
 
+Open ports act as potential entry points for attackers. Even a single exposed service can be exploited if it is misconfigured or outdated.
+
+Examples of common risks:
+
+* Port 22 (SSH): Brute-force login attempts
+* Port 80 (HTTP): Unencrypted communication vulnerable to interception
+* Port 443 (HTTPS): Secure but still exposed to web-based attacks
+* Unknown services: May contain vulnerabilities if not patched
+
+This demonstrates how attackers can quickly map a system and identify possible weaknesses.
+
+---
+
+## Risk Assessment
+
+* Low number of open ports reduces exposure
+* Identified services may still pose risks if not regularly updated
+* Lack of firewall restrictions could allow unauthorized access
+
+---
+
+## Mitigation Recommendations
+
+* Close all unnecessary ports
+* Use firewall rules to restrict access (e.g., allow only trusted IPs)
+* Regularly update and patch services
+* Disable unused services
+* Implement intrusion detection systems (IDS)
+
+---
+
+## Conclusion
+
+This project demonstrates how network scanning can reveal critical information about a system in just a few minutes. Even simple reconnaissance techniques can expose valuable details that attackers can exploit.
+
+By understanding these techniques, security professionals can better defend systems by minimizing exposure, monitoring services, and applying proactive security measures.
+
+---
+
+## Future Improvements
+
+* Integrate Wireshark for packet-level analysis
+* Perform scans on multiple machines for comparison
+* Automate scanning using scripts
+* Combine with vulnerability scanners like Nessus or OpenVAS
+
+---
