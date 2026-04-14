@@ -160,3 +160,12 @@ By understanding these techniques, security professionals can better defend syst
 * Combine with vulnerability scanners like Nessus or OpenVAS
 
 ---
+
+## Detailed Explanation 
+
+This project reflects the reconnaissance phase of a cybersecurity assessment. Before any deeper testing can happen, it is important to understand what systems are active, what ports are open, and what services are exposed to the network.
+The host discovery step helps identify which devices are reachable on the local network. This is useful because it shows what systems are present before focusing on one specific target.
+The port scan then reveals which communication channels are open on the target machine. Since services listen on ports, this gives an early view of the machine’s attack surface.
+The service detection step provides additional context by identifying what software may be running behind those open ports. From a defensive point of view, this helps determine whether exposed services are expected, necessary, and safely configured.
+By performing this lab in a controlled virtual environment, I gained practical experience with basic network reconnaissance and a better understanding of how systems expose information on a network.
+
