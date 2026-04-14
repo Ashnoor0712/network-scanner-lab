@@ -35,6 +35,15 @@ The goal was to understand how systems appear on a network and what information 
 
 * nmap -sV 10.0.2.15 - Detected services running on open ports.
 
+### More nmap commands - Advanced Scanning Techniques
+
+* nmap -A 10.0.2.15
+➡ Enables OS detection, version detection, script scanning
+* nmap -O 10.0.2.15
+➡ Attempts OS fingerprinting
+* nmap --script vuln 10.0.2.15
+➡ Checks for known vulnerabilities
+
 ## Key Findings
 
 * Only a small number of ports were open on the system
